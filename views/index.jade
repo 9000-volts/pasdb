@@ -13,8 +13,23 @@ html
       Enter an artist and song title below to find out what songs it
       samples and gets samples from.
     form.songsearch(action='/',method='get')
-      input(type='text',name='a',placeholder='Artist Name',value=artist)
       input(type='text',name='s',placeholder='Song Title',value=song)
+      span by
+      input(type='text',name='a',placeholder='Artist Name',value=artist)
       input(type='submit',value='Go')
     if message
-      h1=message
+      h2=message
+    if listings
+     for listing in listings
+       .listing
+         b=listing.usessong
+         span by
+         b=listing.usesartist
+    if add
+      form.songsearch(action='/n',method='get')
+        input(type='hidden',name='s',value=song)
+        input(type='hidden',name='a',value=artist)
+        input(type='text',name='ss',placeholder='Sampled Song Title')
+        span by
+        input(type='text',name='sa',placeholder='Sampled Artist Name')
+        input(type='submit',value='Add')

@@ -6,8 +6,19 @@ body {
   margin: 3em auto;
   width: 600px;
 }
+.listing {
+  padding: 0.5em;
+  border: 1px solid #aaa;
+  margin: 0.5em;
+}
+.listing * {
+  margin-left: 0.5em;
+}
 form.songsearch {
   display: flex;
+}
+form.songsearch span {
+  margin: 0.5em 0.2em;
 }
 form.songsearch input {
   padding: 0.5em;
@@ -15,6 +26,7 @@ form.songsearch input {
   border: 1px solid #aaa;
   margin: 0.2em;
   color: #333;
+  text-align: center;
 }
 form.songsearch input[type='text'] {
   width: 100%;
