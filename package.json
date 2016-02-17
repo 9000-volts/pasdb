@@ -1,0 +1,16 @@
+{
+  "name": "pasdb",
+  "version": "1.0.0",
+  "description": "Public Audio Samples DataBase Server",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/9000-volts/pasdb.git"
+  },
+  "author": "9000 volts and Vitor Korolyuk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/9000-volts/pasdb/issues"
+  },
+  "homepage": "https://github.com/9000-volts/pasdb#readme"
+}
