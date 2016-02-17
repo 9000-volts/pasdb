@@ -10,12 +10,22 @@ mongoose.connect('mongodb://localhost/pasdbserv');
 app.set('views', './views')
 app.set('view engine', 'jade');
 
+// Serve files from the 'public' directory.
+app.use(express.static('public'));
+
 // Serve the 'index' view (views/index.jade) at / with some properties.
 app.get('/', function (req, res) {
-  res.render('index', { title: 'Hey', message: 'Hello there!'});
+  // If the user is looking for a song:
+  if (req.query.a && req.query.s) {
+    res.render('index', { artist: req.query.a,
+                          song: req.query.s,
+                          message: 'No Information' });
+
+  // If the user is just loading up the homepage:
+  } else res.render('index', {});
 });
 
-
+/*
 // !!! DATABASE TEST CODE - IGNORE! !!!
 // This code was thrown in to test out the database, and I am leaving it in
 // temporarily as a demo/reference as we work on the project.
@@ -43,6 +53,7 @@ app.get('/foo/:name/:message', function (req, res) {
   });
 });
 // !!! END DATABASE TEST CODE !!!
+*/
 
 // Serve on port 3000!
 app.listen(3000, function () {

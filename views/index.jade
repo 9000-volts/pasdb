@@ -1,5 +1,20 @@
 html
   head
-    title= title
+    if song
+      title=song + ' by ' + artist + ' - pasdb'
+    else
+      title pasdb
+    link(rel='stylesheet',href='/style.css')
   body
-    h1= message
+    h1 Public Audio Samples Database
+    p.
+      The <i>pasdb</i> is a public database to track what songs are used
+      as samples in other songs.
+      Enter an artist and song title below to find out what songs it
+      samples and gets samples from.
+    form.songsearch(action='/',method='get')
+      input(type='text',name='a',placeholder='Artist Name',value=artist)
+      input(type='text',name='s',placeholder='Song Title',value=song)
+      input(type='submit',value='Go')
+    if message
+      h1=message
