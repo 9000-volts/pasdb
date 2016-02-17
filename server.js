@@ -40,10 +40,10 @@ app.get('/', function (req, res) {
                                    message: 'No Information',
                                    add: true });
     });
-
-
   // If the user is just loading up the homepage:
-  } else res.render('index', {});
+  } else if (req.query.a || req.query.s)
+    res.redirect('/')
+  else res.render('index', {});
 });
 
 var pageurl = function (artist, song) {
